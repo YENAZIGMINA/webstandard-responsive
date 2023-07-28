@@ -1,0 +1,828 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Nanum+Brush+Script&family=Nanum+Gothic:wght@400;700;800&display=swap');
+
+/* font-family: 'Abel', sans-serif;
+font-family: 'Nanum Brush Script', cursive;
+font-family: 'Nanum Gothic', sans-serif; 
+*/
+
+
+/* 💙레이아웃 */
+body {
+    background: url(../img/milky-way-bg.jpg) repeat-x center top;
+    background-size: 100% 327px;
+}
+#header {height: 327px;}
+#nav {background-color: #f6fdff;}
+#title {background-color: #eaf7fd;}
+main {}
+#footer {border-top: 1px solid #dbdbdb;}
+
+
+/* 💙contents 레이아웃 */
+#contents {}
+#contents .container {
+    border-left: 1px solid #dbdbdb;
+    border-right: 1px solid #dbdbdb;
+    box-sizing: border-box;
+}
+#contents #cont_left{
+    float: left;
+    width: 250px;
+}
+#contents #cont_center{
+    float: left;
+    width: calc(100% - 500px);
+    border-left: 1px solid #dbdbdb;
+    border-right: 1px solid #dbdbdb;
+    box-sizing: border-box;
+}
+#contents #cont_right{
+    float: left;
+    width: 250px;
+}
+
+
+/* container */
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+/* 💛header */
+.header {}
+
+.header .header_menu {
+    text-align: right;
+}
+
+.header .header_menu a {
+    color: #fff;
+    display: inline-block;
+    padding: 8px 0 0 10px;
+}
+
+.header .header_menu a:hover {
+    color: #ccc;
+}
+
+.header .header_tit {
+    text-align: center;
+    font-family: 'Abel', sans-serif;
+    text-transform: uppercase;
+}
+
+.header .header_tit h1 {
+    color: #fff;
+    display: inline-block;
+    /* 포지션absolute로도 잡을 수 있음 */
+    padding: 5px 30px;
+    background-color: rgb(45, 182, 180);
+    letter-spacing: 2px;
+    margin-top: 55px;
+    font-weight: 800;
+    transition: 0.3s ease-in-out; /* ease-in-out 처음과 끝을 부드럽게 */
+}
+.header .header_tit h1:hover{
+    box-shadow: inset 135px 0px 20px #258fac, 
+                inset -135px 0px 20px #258fac;
+}
+
+.header .header_tit a {
+    color: #fff;
+    background-color: #4a9adf;
+    display: inline-block;
+    padding: 5px 20px;
+    margin-top: -7px;
+    transition: 0.3s ease-in-out;
+}
+.header .header_tit a:hover{
+    box-shadow: inset 75px 0px rgba(58, 128, 161, 0.9), 
+                inset -75px 0px rgba(58, 128, 161,0.9);
+}
+
+.header .header_icon {
+    text-align: center;
+    margin-top: 10px;
+}
+.header .header_icon ul {}
+.header .header_icon ul li {
+    display: inline;
+    margin-left: 5px;
+}
+.header .header_icon ul li a {
+    position: relative;
+    display: inline-block;
+    color: #fff;
+    font-size: 35px;
+    width: 60px; height: 60px;
+    background-color: #3192bf;
+    border-radius: 50%;
+    line-height: 60px;
+    margin-top: 40px;
+}
+.header .header_icon ul li a i {}
+.header .header_icon ul li a span {
+    position: absolute;
+    top: -40px; left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    background-color: #3192bf;
+    line-height: 1.2;
+    padding: 3px 9px;
+    border-radius: 6px 0;
+    transition: 0.3s;
+    opacity: 0;
+}
+.header .header_icon ul li:hover a span {
+    top: -30px;
+    opacity: 1;
+}
+.header .header_icon ul li a span::before {
+    content: '';
+    position: absolute;
+    bottom: -9px; left: 42%;
+    /* width: 5px; height: 5px;
+    background-color: red; 
+    => 먼저 이값을 줘서 영역확인하고, border값으로 뾰족한 모양만든 후
+       위 값은 삭제 */
+    border: 5px solid #3192bf;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+}
+
+
+/* 💛nav 전체메뉴 */
+.nav {
+    display: none;
+    padding: 25px 0;
+}
+.nav>div {
+    float: left;
+    width: 40%;
+}
+.nav>div:last-child {width: 20%;}
+.nav>div h3 {
+    font-size: 18px;
+    color: #25a2d0;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+.nav>div ul {overflow: hidden;}
+.nav>div ul li {
+    position: relative;
+    float: left;
+    width: 50%;
+    padding-left: 8px;
+    box-sizing: border-box;
+}
+.nav>div:last-child ul li{width: 100%;}
+.nav>div ul li::before {
+    content: '';
+    width: 3px; height: 3px;
+    background-color: #25a2d0;
+    position: absolute;
+    top: 9px; left: 0;
+}
+nav>div ul li a {
+    position: relative;
+}
+nav>div ul li a::after {
+    content: '';
+    height: 2px; width: 0px;
+    background-color: #25a2d0;
+    position: absolute;
+    bottom: 0; left: 0;
+    transition: 0.3s;
+}
+nav>div ul li a:hover::after {
+    width: 150px;
+}
+
+/* 💛title */
+#title {
+    text-align: center;
+    position: relative;
+    padding: 5px 0;
+}
+#title h2 {
+    font-family: 'Nanum Brush Script', cursive;
+    font-size: 39px;
+    color: #0093bd;
+}
+#title .btn {
+    position: absolute;
+    top: 5px; right: 0;
+    width: 60px; height: 60px;
+    border-radius: 50%;
+    background-color: #3192bf;
+    color: #fff;
+    font-size: 35px;
+    line-height: 60px;
+}
+#title .btn i {}
+
+
+/* 💛main */
+/* #contents */
+.column {
+    padding: 15px;
+    border-bottom: 1px solid #dbdbdb;
+}
+.column .col_tit {
+    font-size: 20px;
+    color: #2f7fa6;
+    padding: 5px;
+}
+.column .col_desc {
+    color: #878787;
+    border-bottom: 1px dashed #dbdbdb;
+    padding-bottom: 15px; margin-bottom: 15px;
+}
+
+.column.col3 {
+    border-bottom: none;
+}
+.column.col6 {
+    border-bottom: none;
+}
+.column.col9 {
+    border-bottom: none;
+}
+
+/* menu */
+.menu {}
+.menu ul {}
+.menu ul li {}
+.menu ul li a {
+    position: relative;
+    display: block;
+    padding: 10px;
+    font-size: 16px;
+    color: #878787;
+    text-transform: uppercase;
+    border-bottom: 1px solid #dbdbdb;
+    transition: .5s;
+}
+.menu ul li a:hover {
+    background-color: rgba(26,130,174,0.9);
+    color: #fff;
+    box-shadow: inset 190px 0px 15px rgba(36,130,170,0.7);
+}
+.menu ul li a i {
+    position: absolute;
+    top: 15px; right: 10px;
+}
+
+/* col4. 이미지 슬라이드 (슬릭) */
+/* ❗슬릭을 여러개 가져올 수 있으니 꼭 부모태그 작성 */
+.slider {}
+.slider div {}
+.slider div figure {
+    position: relative;
+}
+.slider div figure img {}
+.slider div figure figcaption {
+    position: absolute;
+    bottom: 0; left: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    color: #fff;
+    background-color: rgba(0,0,0,0.5);
+    font-size: 18px;
+    width: 100%;
+}
+.slider div figure figcaption em {
+    font-family: 'Abel', sans-serif;
+    opacity: 0;
+    transition: 0.9s 0.2s; /* 애니메이션시간, 지연시간 */
+    transform: translateX(50px); display: block;
+}
+.slider div.slick-active figure figcaption em {
+    opacity: 1;
+    transform: translateX(0px); /* 같은말 transform: none; */
+}
+.slider div figure figcaption span {
+    display: block; 
+    /* 글자만큼만 영역잡히는데 부모에서 w100% 잡아주기 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateX(50px);
+    transition: 0.9s 0.4s;
+}
+.slider div.slick-active figure figcaption span {
+    opacity: 1;
+    transform: translateX(0px);
+}
+
+
+
+.slider .slick-arrow {
+    position: absolute;
+    /* top: 50%; left: 0; */
+    z-index: 30; /* prev깔려있는데 list(이미지)보다 형이므로 깔려서 */
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 900;
+    /* 2) 폰트어썸 개발자모드에서 i 잡고 폰트패밀리,폰트웨이트 복붙 후 
+          **Pro-> Free**로 수정*/
+    font-size: 0; /* 3) 폰트어썸만살리기(글자없애기) */
+    visibility: hidden; /* 4)뒷 배경 없애기 */
+    color: #5dbfeb;
+    bottom: -5px;
+}
+.slider .slick-prev {
+    left: 5px;
+}
+.slider .slick-prev::before {
+    content: '\f060'; /* 1)폰트어썸 개발자모드로 짚어서 컨텐츠내용 복붙 */
+    font-size: 22px; /* 폰트어썸만살리기(글자없애기) */
+    visibility: visible; /* 뒷 배경 없애기 */
+}
+.slider .slick-next {
+    right: 5px;
+}
+.slider .slick-next::before{
+    content: '\f061';
+    font-size:22px; /* 폰트어썸만살리기(글자없애기) */
+    visibility: visible; /* 뒷 배경 없애기 */
+}
+
+.slider .slick-dots {
+    text-align: center;
+}
+.slider .slick-dots li {
+    display: inline-block;
+    margin: 5px;
+}
+.slider .slick-dots li button {
+    font-size: 0;
+    width: 12px; height: 12px;
+    background-color: #5dbfeb;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+.slider .slick-dots li.slick-active button {
+    background-color: #2b91c8;
+    width: 25px;
+    border-radius: 10px;
+}
+
+/* col5. 라이트갤러리 */
+.square {}
+.square a {
+    position: relative;
+    float: left;
+    width: 19%;
+    margin: 0.5%;
+    overflow: hidden; /*❗em태그 hover할때 본인영역 말고는 안보이게! */
+}
+.square a img {
+    width: 100%;
+    display: block;
+    /* 이미지속성때문에 공간이 생기는데, ❗처리하기위해 블럭처리 */
+}
+.square a em {
+    position: absolute;
+    bottom: -25px; left: 0;
+    width: 100%;
+    color: #fff;
+    background-color: rgba(0,0,0,0.8);
+    text-align: center;
+    transition: 0.3s;
+}
+.square a:hover em {
+    bottom: 0;
+}
+
+.square a:nth-child(1):hover img {
+    -webkit-filter: blur(2px);
+            filter: blur(2px);
+}
+.square a:nth-child(2):hover img {
+    -webkit-filter: brightness(50%);
+            filter: brightness(50%); /* 명도 */
+}
+.square a:nth-child(3):hover img {
+    -webkit-filter: contrast(10%);
+            filter: contrast(10%); /* 대비 */
+}
+.square a:nth-child(4):hover img {
+    -webkit-filter: grayscale(100%);
+            filter: grayscale(100%); /* 회색,흑백처리 */
+}
+.square a:nth-child(5):hover img {
+    -webkit-filter: hue-rotate(80deg);
+            filter: hue-rotate(80deg); /* 색조 */
+}
+.square a:nth-child(6):hover img {
+    -webkit-filter: invert(100%);
+            filter: invert(100%); /* 반전 */
+}
+.square a:nth-child(7):hover img {
+    -webkit-filter: opacity(50%);
+            filter: opacity(50%); /* 투명도 */
+}
+.square a:nth-child(8):hover img {
+    -webkit-filter: saturate(200%);
+            filter: saturate(200%); /* 채도 */
+}
+.square a:nth-child(9):hover img {
+    -webkit-filter: sepia(50%);
+            filter: sepia(50%); /* 적갈색 */
+}
+.square a:nth-child(10):hover img {
+    -webkit-filter: sepia(120%) blur(1px);
+            filter: sepia(120%) blur(1px); /* 2개 값을 같이 설정 */
+}
+
+/* col6. 비디오 */
+/* ❗❗padding과 margin의 백분율(%)은 상하좌우가 동일하게
+     기준이 "부모의 넓이"를 따라간다! */
+.video {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    /* 높이는 패딩으로 맞춘다:유튜브 영상 비율 16:9이므로 56.25% 
+    / ❗❗기본)패딩은 부모의 넓이를 따라감(백분율)*/
+}
+.video iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+}
+
+/* col7 카드 */
+.card {
+    position: relative;
+    perspective: 600px;
+    /* 원근감 조절 (최소 600px)그 아래는 너무 화면에 돌출됨 */
+}
+.card .front {
+    transform: rotateY(0deg);
+    transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden; /* 뒷면:숨기기 */
+    position: relative; /* ❗다른 것 영향안주고 포지션줄때 relative */
+    z-index: 2; /* ❗position 있어야 z-index 적용됨 */
+    transition: 0.5s;
+}
+.card .front img {}
+.card .back {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: #4038dc;
+    transform: rotateY(-180deg);
+    z-index: 1;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    transition: 0.5s;
+}
+.card .back i {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    color: #fff;
+    font-size: 45px;
+}
+.card:hover .front {
+    transform: rotateY(180deg);
+}
+.card:hover .back {
+    transform: rotateY(0deg);
+    z-index: 2;
+}
+
+/* col.8 card2 */
+.card2 {
+    position: relative;
+    perspective: 600px; /* 원근감 */
+}
+
+.card2 figure {
+    transform-style: preserve-3d;
+}
+.card2 figure img {}
+.card2 figure figcaption {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%) translateZ(100px);
+    width: 60%;
+    background-color: rgba(0,0,0,0.4);
+    color: #fff;
+    text-align: center;
+    padding: 3px 0;
+}
+.card2 figure figcaption h3 {
+    font-family: 'Abel', sans-serif;
+    background-color: rgba(0,0,0,0.4);
+    color: #fff;
+    text-align: center;
+    padding: 3px 0;
+}
+
+.card2 .front {
+    position: relative;
+    z-index: 2;
+    transform: rotateY(0deg);
+    transform-style: preserve-3d;
+    transition: 0.5s;
+}
+.card2 .back {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 1;
+    transform: rotateY(-180deg);
+    transform-style: preserve-3d;
+    transition: 0.5s;
+}
+
+.card2:hover .front {
+    transform: rotateY(180deg);
+}
+.card2:hover .back {
+    transform: rotateY(0deg);
+    z-index: 2;
+}
+
+
+/* col9. card3 */
+.card3 {
+    position: relative;
+    overflow: hidden;
+}
+.card3 figure {}
+.card3 figure img {}
+.card3 figure figcaption {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(200%,-50%) rotate(180deg);
+    width: 100px; height: 100px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 50%;
+    transition: 0.3s;
+    padding-top: 13%;
+    box-sizing: border-box;
+}
+.card3:hover figure figcaption {
+    transform: translate(-50%,-50%) rotate(0deg);
+}
+.card3 figure figcaption h3 {}
+.card3 figure figcaption h3 em {
+    display: block;
+}
+
+
+
+/* col2 게시판1 */
+.notice1 {position: relative;}
+.notice1 h5 {
+    font-size: 14px;
+    color: #2f7fa6;
+    padding-bottom: 5px;
+}
+.notice1 ul {}
+.notice1 ul li {
+    position: relative;
+    padding-left: 8px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.notice1 ul li::after {
+    content: '';
+    position: absolute;
+    top: 8px; left: 0;
+    width: 3px; height: 3px;
+    background-color: #449ce2;
+}
+.notice1 ul li a {}
+
+.notice1 .more {
+    position: absolute;
+    top: 2px; right: 8px;
+    color: #878787;
+    font-size: 11px;
+}
+.notice1 .more i {
+    display: inline-block;
+    padding-left: 3px;
+}
+
+/* col2 게시판2 */
+.notice2 {position: relative;}
+.notice2 h5 {
+    font-size: 14px;
+    color: #2f7fa6;
+    margin-top: 15px;
+}
+.notice2 ul {}
+.notice2 ul li {
+    position: relative;
+    padding-left: 8px;
+    /* ❗2줄 이상일 때 말줄임말❗ */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; /* 줄별로 숫자 바꾸기 */
+    padding-bottom: 5px;
+    height: 40px; /* pb주니 숨겨져 있던 말줄임말 나와서 억지로 높이값 설정함 */
+}
+.notice2 ul li::after {
+    content: '';
+    position: absolute;
+    top: 8px; left: 0;
+    width: 3px; height: 3px;
+    background-color: #449ce2;
+}
+.notice2 ul li a {}
+.notice2 .more{
+    position: absolute;
+    top: 2px; right: 8px;
+    color: #878787;
+    font-size: 11px;
+}
+.notice2 .more i {
+    display: inline-block;
+    padding-left: 2px;
+}
+
+
+/* .col3 blog2 */
+.blog2 {
+    margin-top: 15px;
+}
+.blog2 .img-retina {
+    background: url(../img/blog3_@1.jpg);
+    background-size: cover;
+}
+.blog2 .img-retina h5 {
+    padding: 30px;
+    color: #fff;
+    text-align: center;
+}
+.blog2 p {}
+
+/* dppx : Device pixel ratio */
+@media only screen and (-webkit-min-device-pixel-ratio:1.5),
+       only screen and (min-resolution:1.5dppx){
+       .blog2 .img-retina{
+            background: url(../img/blog3_@3.jpg);
+            background-size: cover;
+        }
+       }
+
+
+/* footer */
+.footer {
+    text-align: center;
+    padding: 30px 0;
+}
+.footer ul {}
+.footer ul li {
+    display: inline;
+    padding: 0 7px 0 10px;
+}
+.footer ul li a {}
+.footer ul li a strong {
+    font-weight: bold;
+}
+
+.footer address {
+    padding-top: 15px;
+}
+.footer address a {}
+.footer address a strong {
+    
+}
+
+
+
+
+
+
+
+
+/* 💛반응형 미디어쿼리 */
+
+@media (max-width:1220px){
+    .container {width: 100%;} /* 반응형일때 %로 값을 잡아야 함 */
+    .row {padding: 0 15px;}
+    .header .header_menu {padding-right: 15px;}
+    #title .btn {right: 5px;}
+    #contents .container {border: none;}
+    .square a {width: 24%;}
+    .square a:nth-child(5n) {display: none;}
+    #contents #cont_center {min-height: 1373px;}
+}
+@media (max-width:1024px){
+    .square a {width: 32.3333%;}
+    .square a:nth-child(5) {display: block;}
+}
+@media (max-width:960px){
+    .nav>div {float: none; width: 100%;}
+    .nav>div:last-child {width: 100%;}
+    .nav>div ul li {width: 33.3333%;}
+    .nav>div:last-child ul li {width: 33.3333%;}
+    .nav>div h3 {margin-top: 12px;}
+    #contents #cont_right {
+        clear: both; /* float 풀면 깨지게되는데, 이걸로 약처리 */
+        float: none;
+        width: 100%;
+        border: 1px solid #dbdbdb;
+    }
+    #contents #cont_right .column {
+        float: left;
+        width: 33.3333%;
+        box-sizing: border-box;
+        border-bottom: 0;
+        border-right: 1px solid #dbdbdb;
+    }
+    #cont_right .column:last-child {border: none;}
+    #contents #cont_center {
+        width: calc(100% - 250px);
+        border-right:none;
+    }
+}
+@media (max-width:768px){
+    #contents #cont_left {
+        float: none;
+        width: 100%;
+    }
+    #contents #cont_center {
+    min-height: auto;
+    border-left:none;
+    width: 100%;
+}
+}
+@media (max-width:600px){
+    #header {height: auto;} /* auto로 하면 자식이 가진 값만큼 가짐 */
+    .header .header_tit {display: none;}
+    .header .header_icon {display: none;}
+    #title .btn {display: none;}
+    .column.col1 {
+        padding: 0;
+        border-bottom: 0;
+    }
+    .column.col1 .col_tit {
+        display: none;
+    }
+    .column.col1 .col_desc {display: none;}
+    .column.col1 .menu ul li {
+        float: left;
+        width: 33.3333%;
+        box-sizing: border-box;
+        border-top: 1px solid #dbdbdb;
+        border-right: 1px solid #dbdbdb;
+        margin-top: -1px;
+    }
+    .column.col1 .menu ul li a {
+        /* padding: 43.5px; */
+        text-align: center;
+        /* border-right: 1px solid #dbdbdb; */
+    }
+    .column.col1 .menu ul li:nth-child(3n) {border-right:none;}
+    .column.col1 .menu ul li a i {display: none;}
+
+    .column.col2 {
+        background-color: #fff;
+    }
+    .column.col4 {border-top: 1px solid #dbdbdb;}
+    #contents #cont_right .column {
+        width: 50%;
+    }
+    #contents #cont_right .column.col8 {border-right: 0;}
+    #contents #cont_right .column.col9 {display: none;}
+    .slider div figure figcaption {padding: 12px;}
+    .slider div figure figcaption span {font-size: 14px;}
+    .column.col5 .square a {width: 49%;}
+    .column.col5 .square a:nth-child(5) {display: none;}
+}
+@media (max-width:480px){
+    .tit h2 {font-size: 10vw;}
+}
+@media (max-width:320px){
+    #contents #cont_right .column {
+        width: 100%;
+        border-right: none;
+    }
+    #contents #cont_right .column.col7 {
+        border-bottom: 1px solid #dbdbdb;
+    }
+    #title {padding: 2px;}
+    #title h2 {
+        font-size: 30px;
+    }
+    .column.col5 .square a {
+        width: 100%;
+        margin: 1px 0;
+    }
+    .column.col1 .menu ul li a {font-size: 14px;}
+}
